@@ -1,0 +1,160 @@
+:root{
+    --border-var: 2px solid black;
+}
+
+body{
+    margin: 0;
+    font-family: system-ui;
+    background-color: rgba(0, 255, 255, 0.19); 
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid white;
+    background-color: rgb(83, 74, 74);
+    width: 100%;
+}
+
+#navbar-links{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 8%;
+    list-style: none;
+    padding: 0px 20px; 
+}
+
+#navbar-links li{
+    padding-left: 10px;
+}
+
+#navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#welcome-section{
+    border: var(--border-var);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#welcome-header{
+  font-family: "Edu NSW ACT Cursive", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  padding-right: 8px;
+}
+
+#welcome-remarks{
+    font-style: italic;
+    font-size: 20px;
+}
+
+#tutorial-section{
+    border: var(--border-var);
+    border-radius: 25px;
+    background-color:rgb(195, 190, 190);
+    margin-top: 10px;
+    width: 40%;
+}
+
+#tutorial-header{
+    display: flex;
+    justify-content: center;
+    font-family: cursive;
+    font-style: italic;
+    font-size: 30px;
+    margin: auto;
+}
+
+.list-items{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+button{
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 0px 12px;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid white;
+    background-color: rgb(83, 74, 74);
+    width: 100%;
+    margin-top: 10px;
+}
+
+.cards-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+    background-color: red;
+    margin-top: 25px;
+
+}
+
+.restaurant-picture{
+    width: 70%;
+    border-radius: 15px;
+    margin: 10px 10px;
+    padding-top: 2px;
+}
+
+.restaurant-card{
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.restaurant-card:hover{
+    color: rgb(255, 255, 255);
+    background-color: lightblue;
+}
+
+.restaurant-card:nth-child(n){
+    background-color: rgba(0, 94, 255, 0.347);
+}
+.restaurant-card:not(:first-child){
+    border: 5px solid grey;
+}
+
+@media (max-width: 480px){
+    .cards-container{
+        grid-template-columns: 1fr;
+    }
+
+    #tutorial-section{
+        width: 80%;
+    }
+
+    #navbar-links{
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        width: 50%;
+        background-color: rgb(23, 35, 106);
+    }
+
+    #navbar-links.nav-open{
+        transform: translateX(0);
+    }
+}
+
